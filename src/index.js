@@ -42,8 +42,6 @@ function sumWithDefaults(a = 5, b = 100) {
  Пример:
    returnFnResult(() => 'привет') вернет 'привет'
  */
-
-
 function returnFnResult(fn) {
     return fn();
 }
@@ -103,13 +101,9 @@ function returnArgumentsArray() {
    console.log(newSum()) выведет 6
  */
 function bindFunction(sum, ...valuesArr) {
-    /*  function sum(a, b) {
-        return a + b;
-        var newSum = bindFunction(sum, 2, 4);
-      }  */
-
     sum = sum.bind(sum, ...valuesArr);
-    return sum;
+
+    return sum
 
 }
 
