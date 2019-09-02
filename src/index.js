@@ -1,5 +1,3 @@
-import { join } from "path";
-
 /* ДЗ 2 - работа с массивами и объектами */
 
 /*
@@ -25,7 +23,7 @@ function map(array, fn) {
     var myarray = []
 
     for (let index = 0; index < array.length; index++) {
-        myarray.push(fn(array[index], index, array));
+        myarray.push(fn(array[index], index, array))
     }
 
     return myarray
@@ -41,13 +39,13 @@ function map(array, fn) {
 function reduce(array, fn, initial) {
 
     var prevValue = initial || array[0],
-        i = initial ? 0 : 1;
+        i = initial ? 0 : 1
 
     for (; i < array.length; i++) {
-        prevValue = fn(prevValue, array[i], i, array);
+        prevValue = fn(prevValue, array[i], i, array)
     }
 
-    return prevValue;
+    return prevValue
 
 }
 
@@ -62,15 +60,14 @@ function reduce(array, fn, initial) {
 function upperProps(obj) {
     var myarray = []
 
-    // eslint-disable-next-line guard-for-in
     for (var key in obj) {
-        myarray.push(key.toUpperCase())
+        if (obj.hasOwnProperty(key)) {
+            myarray.push(key.toUpperCase())
+        }
     }
 
     return myarray
-
 }
-
 
 /*
  Задание 5 *:
@@ -94,9 +91,7 @@ function createProxy(obj) {
         }
     }
 
-    var obj = new Proxy({}, handler);
-
-    return obj
+    return obj = new Proxy({}, handler)
 
 }
 

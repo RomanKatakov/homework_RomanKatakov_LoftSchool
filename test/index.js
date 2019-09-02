@@ -253,8 +253,6 @@ describe('ДЗ 3 - объекты и массивы', () => {
             obj.a = 2;
             obj.b = 5;
 
-            console.log(obj)
-
             assert.deepEqual(obj, { a: 4, b: 25 });
         });
     });
